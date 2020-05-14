@@ -117,6 +117,7 @@ if $prerequisites; then
 
     { echo
       colorize 1 "Restart the terminal or run 'exec \$SHELL'"
+      echo
     } >&2
 
   fi
