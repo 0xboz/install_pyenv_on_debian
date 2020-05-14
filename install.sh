@@ -104,7 +104,7 @@ if $prerequisites; then
         echo 'status --is-interactive; and . (pyenv init -|psub)' >> ${profile}
         echo 'status --is-interactive; and . (pyenv virtualenv-init -|psub)'
         echo 'status --is-interactive; and . (pyenv virtualenv-init -|psub)' >> ${profile}
-        exec $SHELL
+        source ${profile}
         ;;
       * )
         echo "export PATH=\"${PYENV_ROOT}/bin:\$PATH\""
@@ -113,7 +113,7 @@ if $prerequisites; then
         echo "eval \"\$(pyenv init -)\"" >> ${profile}
         echo "eval \"\$(pyenv virtualenv-init -)\""
         echo "eval \"\$(pyenv virtualenv-init -)\"" >> ${profile}
-        exec $SHELL
+        source ${profile}
         ;;
       esac
     } >&2
