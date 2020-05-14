@@ -72,7 +72,6 @@ if $prerequisites; then
     { echo
       colorize 1 "WARNING"
       echo ": seems you still have not added 'pyenv' to the load path."
-      echo
     } >&2
 
     case "$shell" in
@@ -104,7 +103,6 @@ if $prerequisites; then
         echo 'status --is-interactive; and . (pyenv init -|psub)' >> ${profile}
         echo 'status --is-interactive; and . (pyenv virtualenv-init -|psub)'
         echo 'status --is-interactive; and . (pyenv virtualenv-init -|psub)' >> ${profile}
-        exec $SHELL
         ;;
       * )
         echo "export PATH=\"${PYENV_ROOT}/bin:\$PATH\""
@@ -113,17 +111,13 @@ if $prerequisites; then
         echo "eval \"\$(pyenv init -)\"" >> ${profile}
         echo "eval \"\$(pyenv virtualenv-init -)\""
         echo "eval \"\$(pyenv virtualenv-init -)\"" >> ${profile}
-        exec $SHELL
         ;;
       esac
     } >&2
 
     { echo
-      colorize 1 "INFO"
-      echo ": Restart the terminal or run 'exec \$SHELL'"
-      echo
-    } >&1
+      colorize 1 "Restart the terminal or run 'exec \$SHELL'"
+    } >&2
 
-    exec $SHELL
   fi
 fi
