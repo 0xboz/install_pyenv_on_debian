@@ -11,5 +11,5 @@ additional features are tailored to Debian-based Os.
 ## How-to
 
 ```shell
-sudo apt install -y curl && curl https://raw.githubusercontent.com/0xboz/install_pyenv_on_debian/master/install.sh | source
+sudo apt install -y curl && curl https://raw.githubusercontent.com/0xboz/install_pyenv_on_debian/master/install.sh | bash
 ```
