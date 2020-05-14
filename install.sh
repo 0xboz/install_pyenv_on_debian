@@ -117,5 +117,11 @@ if $prerequisites; then
         ;;
       esac
     } >&2
+
+    { echo
+      colorize 1 "INFO"
+      echo ": Restart the terminal or run 'exec \$SHELL'"
+      echo
+    } >&1
   fi
 fi
