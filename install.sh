@@ -104,17 +104,16 @@ if $prerequisites; then
         echo 'status --is-interactive; and . (pyenv init -|psub)' >> ${profile}
         echo 'status --is-interactive; and . (pyenv virtualenv-init -|psub)'
         echo 'status --is-interactive; and . (pyenv virtualenv-init -|psub)' >> ${profile}
-        exec "$SHELL"
+        exec $SHELL
         ;;
       * )
-        #TODO  Change this!!!
         echo "export PATH=\"${PYENV_ROOT}/bin:\$PATH\""
         echo "export PATH=\"${PYENV_ROOT}/bin:\$PATH\"" >> ${profile}
         echo "eval \"\$(pyenv init -)\""
         echo "eval \"\$(pyenv init -)\"" >> ${profile}
         echo "eval \"\$(pyenv virtualenv-init -)\""
         echo "eval \"\$(pyenv virtualenv-init -)\"" >> ${profile}
-        exec "$SHELL"
+        exec $SHELL
         ;;
       esac
     } >&2
