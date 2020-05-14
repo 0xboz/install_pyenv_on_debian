@@ -9,7 +9,7 @@ else
   prerequisites=false
 fi
 
-if prerequisites; then
+if $prerequisites; then
   set -e
   [ -n "$PYENV_DEBUG" ] && set -x
 
