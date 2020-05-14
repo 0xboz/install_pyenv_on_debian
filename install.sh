@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -i
+#!/usr/bin/env bash
 
 # Prerequisites
 if uname -v | grep -iqF debian; then  # https://unix.stackexchange.com/a/132481
@@ -104,7 +104,7 @@ if $prerequisites; then
         echo 'status --is-interactive; and . (pyenv init -|psub)' >> ${profile}
         echo 'status --is-interactive; and . (pyenv virtualenv-init -|psub)'
         echo 'status --is-interactive; and . (pyenv virtualenv-init -|psub)' >> ${profile}
-        source ${profile}
+        exec $SHELL
         ;;
       * )
         echo "export PATH=\"${PYENV_ROOT}/bin:\$PATH\""
@@ -113,7 +113,7 @@ if $prerequisites; then
         echo "eval \"\$(pyenv init -)\"" >> ${profile}
         echo "eval \"\$(pyenv virtualenv-init -)\""
         echo "eval \"\$(pyenv virtualenv-init -)\"" >> ${profile}
-        source ${profile}
+        exec $SHELL
         ;;
       esac
     } >&2
