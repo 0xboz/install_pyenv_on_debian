@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -i
 
 # Prerequisites
 if uname -v | grep -iqF debian; then  # https://unix.stackexchange.com/a/132481
