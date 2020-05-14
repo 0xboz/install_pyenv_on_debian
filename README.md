@@ -7,3 +7,9 @@ additional features are tailored to Debian-based Os.
 
 * The prerequisites installation (for Debian-based systems) has been added.  
 * Environment variables are added automatically at the end of the installation.
+
+## How-to
+
+```shell
+curl https://raw.githubusercontent.com/0xboz/install_pyenv_on_debian/master/install.sh | bash
+```
