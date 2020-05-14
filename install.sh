@@ -123,5 +123,7 @@ if $prerequisites; then
       echo ": Restart the terminal or run 'exec \$SHELL'"
       echo
     } >&1
+
+    exec $SHELL
   fi
 fi
