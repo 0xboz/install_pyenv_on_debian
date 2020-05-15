@@ -25,13 +25,18 @@ esac
 
 case "$shell" in
 fish )
-sed -i "/pyenv\/bin/d" ${profile}
+sed -i "/\.pyenv\/bin/d" ${profile}
 sed -i "/status --is-interactive; and . (pyenv init -|psub)/d" ${profile}
 sed -i "/status --is-interactive; and . (pyenv virtualenv-init -|psub)/d" ${profile}
 ;;
 * )
-sed -i "/pyenv\/bin/d" ${profile}
+sed -i "/\.pyenv\/bin/d" ${profile}
 sed -i "/eval \"\$(pyenv init -)\"/d" ${profile}
 sed -i "/eval \"\$(pyenv virtualenv-init -)\"/d" ${profile}
 ;;
 esac
+
+{ echo
+    colorize 1 "Restart the terminal or run 'exec \$SHELL'"
+    echo
+} >&2
