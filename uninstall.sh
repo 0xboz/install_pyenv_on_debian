@@ -28,12 +28,12 @@ esac
 
 case "$shell" in
 fish )
-sed -i '/set -x PATH \""$PYENV_ROOT"/bin\" \$PATH/d' ${profile}
+sed -i "r/set -x PATH \"$PYENV_ROOT/bin\" \$PATH/d" ${profile}
 sed -i "/status --is-interactive; and . (pyenv init -|psub)/d" ${profile}
 sed -i "/status --is-interactive; and . (pyenv virtualenv-init -|psub)/d" ${profile}
 ;;
 * )
-sed -i '/export PATH=\""$PYENV_ROOT"\/bin:\$PATH\"/d' $HOME/.bashrc
+sed -i "r/export PATH=\"$PYENV_ROOT/bin:\$PATH\"/d" ${profile}
 sed -i "/eval \"\$(pyenv init -)\"/d" ${profile}
 sed -i "/eval \"\$(pyenv virtualenv-init -)\"/d" ${profile}
 ;;
