@@ -1,6 +1,3 @@
-PYENV_ROOT="${HOME}/.pyenv"
-echo $PYENV_ROOT
-
 rm -fr $HOME/.pyenv
 
 shell="$1"
@@ -28,12 +25,12 @@ esac
 
 case "$shell" in
 fish )
-sed -i "r/set -x PATH \"$PYENV_ROOT/bin\" \$PATH/d" ${profile}
+sed -i "/pyenv\/bin/d" ${profile}
 sed -i "/status --is-interactive; and . (pyenv init -|psub)/d" ${profile}
 sed -i "/status --is-interactive; and . (pyenv virtualenv-init -|psub)/d" ${profile}
 ;;
 * )
-sed -i "r/export PATH=\"$PYENV_ROOT/bin:\$PATH\"/d" ${profile}
+sed -i "/pyenv\/bin/d" ${profile}
 sed -i "/eval \"\$(pyenv init -)\"/d" ${profile}
 sed -i "/eval \"\$(pyenv virtualenv-init -)\"/d" ${profile}
 ;;
