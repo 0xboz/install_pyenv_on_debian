@@ -29,3 +29,7 @@ Close the current terminal and start a new one. Or run the following in the curr
 ```shell
 exec $SHELL
 ```
+
+## Stay Connected
+
+Join [0xboz's Discord](https://discord.gg/JHt7UQu) and find out more.
